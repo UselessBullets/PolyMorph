@@ -1,0 +1,24 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "useless.polymorph.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "ContainerCraftingMixin",
+    "ContainerPlayerMixin",
+    "EntityPlayerMixin",
+    "NetHandleMixin",
+    "RecipeRegistryMixin"
+  ],
+  "client": [
+    "EntityClientPlayerMPMixin",
+    "GuiInventoryMixin",
+    "GuiWorkbenchMixin"
+  ],
+  "server": [
+    "NetServerHandlerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

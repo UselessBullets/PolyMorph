@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "id": "examplemod",
+  "id": "polymorph",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This mod aims to help new BTA modders.",
+  "name": "PolyMorph",
+  "description": "One recipe, many results.",
   "authors": [
-    "Turnip Labs"
+    "Useless"
   ],
   "contact": {
     "homepage": "",
@@ -17,21 +17,15 @@
 
   "environment": "*",
   "entrypoints": {
-    "main": [
-			"turniplabs.examplemod.ExampleMod"
-    ],
-		"beforeGameStart": [
-			"turniplabs.examplemod.ExampleMod"
-		],
-		"afterGameStart": [
-			"turniplabs.examplemod.ExampleMod"
-		],
 		"recipesReady": [
-			"turniplabs.examplemod.ExampleMod"
+			"useless.polymorph.PolyMorph"
+		],
+		"main": [
+			"useless.polymorph.PolyMorph"
 		]
 	},
   "mixins": [
-      "examplemod.mixins.json"
+      "polymorph.mixins.json"
   ],
 
   "depends": {
