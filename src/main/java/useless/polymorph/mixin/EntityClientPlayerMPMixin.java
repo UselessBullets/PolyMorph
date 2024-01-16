@@ -14,7 +14,7 @@ public class EntityClientPlayerMPMixin extends EntityPlayerMixin implements IDat
 
 	@Override
 	public void polymorph$setRecipeOffset(int offset) {
-		sendQueue.addToSendQueue(new RecipeOffsetPacket(offset));
 		super.polymorph$setRecipeOffset(offset);
+		sendQueue.addToSendQueue(new RecipeOffsetPacket(offset));
 	}
 }

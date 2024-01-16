@@ -9,7 +9,6 @@ import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.item.Item;
 import turniplabs.halplibe.helper.ModVersionHelper;
 import turniplabs.halplibe.helper.NetworkHelper;
-import turniplabs.halplibe.util.GameStartEntrypoint;
 import turniplabs.halplibe.util.RecipeEntrypoint;
 
 import java.util.ArrayList;
