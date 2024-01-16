@@ -19,6 +19,9 @@
   "entrypoints": {
 		"main": [
 			"useless.polymorph.PolyMorph"
+		],
+		"recipesReady": [
+			"useless.polymorph.PolyMorph"
 		]
 	},
   "mixins": [

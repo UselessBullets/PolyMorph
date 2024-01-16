@@ -23,15 +23,15 @@ public abstract class GuiInventoryMixin extends GuiContainer {
 
 	@Inject(method = "init()V", at = @At("TAIL"))
 	private void addButton(CallbackInfo ci){
-		ActionButton button = new ActionButton(-3000, "/assets/polymorph/gui/morphButton.png", (width - xSize)/2 + 142, (height - ySize)/2 + 55, 0, 0, 20, 20,
-				() -> {
-					if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_RSHIFT)){
-						PolyMorph.setRecipeOffset(mc.thePlayer, PolyMorph.getRecipeOffset(mc.thePlayer) - 1);
-					} else {
-						PolyMorph.setRecipeOffset(mc.thePlayer, PolyMorph.getRecipeOffset(mc.thePlayer) + 1);
-					}
-					inventorySlots.onCraftMatrixChanged(((ContainerPlayer)inventorySlots).craftMatrix);
-				});
+		ActionButton button = new ActionButton(-3000, "/assets/polymorph/gui/morphButton.png", (width - xSize)/2 + PolyMorph.getXInv(), (height - ySize)/2 + PolyMorph.getYInv(), PolyMorph.getU(), 0, PolyMorph.getSize(), PolyMorph.getSize());
+		button.setActionCheck(() -> {
+			if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_RSHIFT)){
+				PolyMorph.setRecipeOffset(mc.thePlayer, PolyMorph.getRecipeOffset(mc.thePlayer) - 1);
+			} else {
+				PolyMorph.setRecipeOffset(mc.thePlayer, PolyMorph.getRecipeOffset(mc.thePlayer) + 1);
+			}
+			inventorySlots.onCraftMatrixChanged(((ContainerPlayer)inventorySlots).craftMatrix);
+		});
 		button.setTickCheck(() ->  {
 			button.enabled = PolyMorph.isEnabled();
 			button.visible = PolyMorph.canCycle();
