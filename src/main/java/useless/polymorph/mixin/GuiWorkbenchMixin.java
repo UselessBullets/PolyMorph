@@ -11,6 +11,7 @@ import org.lwjgl.input.Keyboard;
 import org.spongepowered.asm.mixin.Mixin;
 import useless.polymorph.ActionButton;
 import useless.polymorph.PolyMorph;
+import useless.polymorph.PolyMorphClient;
 
 @Environment(EnvType.CLIENT)
 @Mixin(value = GuiCrafting.class, remap = false)
@@ -21,7 +22,7 @@ public abstract class GuiWorkbenchMixin extends GuiContainer {
 	@Override
 	public void init(){
 		super.init();
-		ActionButton button = new ActionButton(-3000, "/assets/polymorph/gui/morphButton.png", (width - xSize)/2 + PolyMorph.getXBench(), (height - ySize)/2 + PolyMorph.getYBench(), PolyMorph.getU(), 0, PolyMorph.getSize(), PolyMorph.getSize());
+		ActionButton button = new ActionButton(-3000, "/assets/polymorph/gui/morphButton.png", (width - xSize)/2 + PolyMorphClient.getXBench(), (height - ySize)/2 + PolyMorphClient.getYBench(), PolyMorphClient.getU(), 0, PolyMorphClient.getSize(), PolyMorphClient.getSize());
 		button.setActionCheck(() -> {
 			if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_RSHIFT)){
 				PolyMorph.setRecipeOffset(mc.thePlayer, PolyMorph.getRecipeOffset(mc.thePlayer) - 1);
@@ -31,8 +32,8 @@ public abstract class GuiWorkbenchMixin extends GuiContainer {
 			inventorySlots.onCraftMatrixChanged(((ContainerWorkbench)inventorySlots).craftMatrix);
 		});
 		button.setTickCheck(() ->  {
-			button.enabled = PolyMorph.isEnabled();
-			button.visible = PolyMorph.canCycle();
+			button.enabled = PolyMorphClient.isEnabled();
+			button.visible = PolyMorphClient.canCycle();
 		});
 		controlList.add(button);
 	}

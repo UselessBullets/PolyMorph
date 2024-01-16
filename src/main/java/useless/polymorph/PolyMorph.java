@@ -20,33 +20,6 @@ public class PolyMorph implements ModInitializer, RecipeEntrypoint {
 	public static String MOD_ID = "polymorph";
 	public static int recipesAmount = 0;
 	public static EntityPlayer lastCraftedPlayer;
-	public static boolean useSmallButtons(){
-		return true;
-	}
-	public static boolean canCycle(){
-		return (recipesAmount > 1) && isEnabled();
-	}
-	public static boolean isEnabled(){
-		return ModVersionHelper.isModPresent(MOD_ID);
-	}
-	public static int getU(){
-		return useSmallButtons() ? 20 : 0;
-	}
-	public static int getXInv(){
-		return 152 - getSize()/2;
-	}
-	public static int getYInv(){
-		return 60 - getSize()/2;
-	}
-	public static int getXBench(){
-		return 101 - getSize()/2;
-	}
-	public static int getYBench(){
-		return 62 - getSize()/2;
-	}
-	public static int getSize(){
-		return 12 + (useSmallButtons() ? 0 : 8);
-	}
 	public static int getRecipeOffset(EntityPlayer player){
 		return ((IDataStorage)player).polymorph$getRecipeOffset();
 	}
@@ -55,12 +28,13 @@ public class PolyMorph implements ModInitializer, RecipeEntrypoint {
 	}
 	@Override
 	public void onRecipesReady() {
-		List<RecipeSymbol> symbols = new ArrayList<>();
-		symbols.add(new RecipeSymbol(Block.dirt.getDefaultStack()));
-		Registries.RECIPES.WORKBENCH.register("test1", new RecipeEntryCraftingShapeless(symbols, Item.diamond.getDefaultStack()));
-		Registries.RECIPES.WORKBENCH.register("test1", new RecipeEntryCraftingShapeless(symbols, Item.ingotSteel.getDefaultStack()));
-		Registries.RECIPES.WORKBENCH.register("test1", new RecipeEntryCraftingShapeless(symbols, Item.ingotIron.getDefaultStack()));
-		Registries.RECIPES.WORKBENCH.register("test1", new RecipeEntryCraftingShapeless(symbols, Item.ingotGold.getDefaultStack()));
+//		Recipes for Testing
+//		List<RecipeSymbol> symbols = new ArrayList<>();
+//		symbols.add(new RecipeSymbol(Block.dirt.getDefaultStack()));
+//		Registries.RECIPES.WORKBENCH.register("test1", new RecipeEntryCraftingShapeless(symbols, Item.diamond.getDefaultStack()));
+//		Registries.RECIPES.WORKBENCH.register("test1", new RecipeEntryCraftingShapeless(symbols, Item.ingotSteel.getDefaultStack()));
+//		Registries.RECIPES.WORKBENCH.register("test1", new RecipeEntryCraftingShapeless(symbols, Item.ingotIron.getDefaultStack()));
+//		Registries.RECIPES.WORKBENCH.register("test1", new RecipeEntryCraftingShapeless(symbols, Item.ingotGold.getDefaultStack()));
 	}
 	@Override
 	public void onInitialize() {

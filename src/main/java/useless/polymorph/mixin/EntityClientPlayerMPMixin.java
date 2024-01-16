@@ -6,6 +6,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import useless.polymorph.IDataStorage;
 import useless.polymorph.PolyMorph;
+import useless.polymorph.PolyMorphClient;
 import useless.polymorph.RecipeOffsetPacket;
 
 @Mixin(value = EntityClientPlayerMP.class, remap = false)
@@ -16,7 +17,7 @@ public class EntityClientPlayerMPMixin extends EntityPlayerMixin implements IDat
 	@Override
 	public void polymorph$setRecipeOffset(int offset) {
 		super.polymorph$setRecipeOffset(offset);
-		if (PolyMorph.isEnabled()){
+		if (PolyMorphClient.isEnabled()){
 			sendQueue.addToSendQueue(new RecipeOffsetPacket(offset));
 		}
 	}

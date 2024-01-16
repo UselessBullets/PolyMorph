@@ -20,8 +20,11 @@
 		"main": [
 			"useless.polymorph.PolyMorph"
 		],
-		"recipesReady": [
-			"useless.polymorph.PolyMorph"
+		"afterClientStart": [
+			"useless.polymorph.PolyMorphClient"
+		],
+		"modmenu" : [
+			"useless.polymorph.ModMenuModule"
 		]
 	},
   "mixins": [
