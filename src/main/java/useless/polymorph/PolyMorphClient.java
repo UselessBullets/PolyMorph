@@ -1,5 +1,7 @@
 package useless.polymorph;
 
+import net.minecraft.core.block.Block;
+import net.minecraft.core.item.ItemStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.options.GuiOptions;
@@ -47,13 +49,12 @@ public class PolyMorphClient implements ClientStartEntrypoint {
 	public static OptionsPage polyMorphOptions;
 	@Override
 	public void beforeClientStart() {
-
 	}
 
 	@Override
 	public void afterClientStart() {
 		modSettings = (ISettings) Minecraft.getMinecraft(Minecraft.class).gameSettings;
-		polyMorphOptions = new OptionsPage("polymorph.gui.options.page.title")
+		polyMorphOptions = new OptionsPage("polymorph.gui.options.page.title", new ItemStack(Block.workbench))
 			.withComponent(new BooleanOptionComponent(modSettings.polymorph$getSmallButtons()))
 			.withComponent(new ToggleableOptionComponent<>(modSettings.polymorph$getInvX()))
 			.withComponent(new ToggleableOptionComponent<>(modSettings.polymorph$getInvY()))
@@ -64,6 +65,6 @@ public class PolyMorphClient implements ClientStartEntrypoint {
 		}
 	}
 	public static GuiScreen getOptionsScreen(GuiScreen guiScreen){
-		return new GuiOptions(guiScreen, Minecraft.getMinecraft(Minecraft.class).gameSettings, polyMorphOptions);
+		return new GuiOptions(guiScreen, polyMorphOptions);
 	}
 }

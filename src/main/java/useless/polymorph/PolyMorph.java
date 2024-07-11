@@ -40,4 +40,8 @@ public class PolyMorph implements ModInitializer, RecipeEntrypoint {
 	public void onInitialize() {
 		NetworkHelper.register(RecipeOffsetPacket.class, true, false);
 	}
+
+    @Override
+    public void initNamespaces() {
+    }
 }
