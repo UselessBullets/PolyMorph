@@ -7,9 +7,7 @@ import net.minecraft.core.data.registry.recipe.RecipeSymbol;
 import net.minecraft.core.data.registry.recipe.entry.RecipeEntryCraftingShapeless;
 import net.minecraft.core.entity.player.EntityPlayer;
 import net.minecraft.core.item.Item;
-import turniplabs.halplibe.helper.ModVersionHelper;
 import turniplabs.halplibe.helper.NetworkHelper;
-import turniplabs.halplibe.util.GameStartEntrypoint;
 import turniplabs.halplibe.util.RecipeEntrypoint;
 
 import java.util.ArrayList;
@@ -29,12 +27,12 @@ public class PolyMorph implements ModInitializer, RecipeEntrypoint {
 	@Override
 	public void onRecipesReady() {
 //		Recipes for Testing
-//		List<RecipeSymbol> symbols = new ArrayList<>();
-//		symbols.add(new RecipeSymbol(Block.dirt.getDefaultStack()));
-//		Registries.RECIPES.WORKBENCH.register("test1", new RecipeEntryCraftingShapeless(symbols, Item.diamond.getDefaultStack()));
-//		Registries.RECIPES.WORKBENCH.register("test1", new RecipeEntryCraftingShapeless(symbols, Item.ingotSteel.getDefaultStack()));
-//		Registries.RECIPES.WORKBENCH.register("test1", new RecipeEntryCraftingShapeless(symbols, Item.ingotIron.getDefaultStack()));
-//		Registries.RECIPES.WORKBENCH.register("test1", new RecipeEntryCraftingShapeless(symbols, Item.ingotGold.getDefaultStack()));
+		List<RecipeSymbol> symbols = new ArrayList<>();
+		symbols.add(new RecipeSymbol(Block.dirt.getDefaultStack()));
+		Registries.RECIPES.WORKBENCH.register("test1", new RecipeEntryCraftingShapeless(symbols, Item.diamond.getDefaultStack()));
+		Registries.RECIPES.WORKBENCH.register("test1", new RecipeEntryCraftingShapeless(symbols, Item.ingotSteel.getDefaultStack()));
+		Registries.RECIPES.WORKBENCH.register("test1", new RecipeEntryCraftingShapeless(symbols, Item.ingotIron.getDefaultStack()));
+		Registries.RECIPES.WORKBENCH.register("test1", new RecipeEntryCraftingShapeless(symbols, Item.ingotGold.getDefaultStack()));
 	}
 	@Override
 	public void onInitialize() {
