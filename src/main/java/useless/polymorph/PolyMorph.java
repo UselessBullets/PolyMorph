@@ -16,6 +16,7 @@ import java.util.List;
 
 public class PolyMorph implements ModInitializer, RecipeEntrypoint {
 	public static String MOD_ID = "polymorph";
+	public static String OFFSET_CHANNEL = MOD_ID + "|" + "OFFSET";
 	public static int recipesAmount = 0;
 	public static EntityPlayer lastCraftedPlayer;
 	public static int getRecipeOffset(EntityPlayer player){
@@ -36,7 +37,6 @@ public class PolyMorph implements ModInitializer, RecipeEntrypoint {
 	}
 	@Override
 	public void onInitialize() {
-		NetworkHelper.register(RecipeOffsetPacket.class, true, false);
 	}
 
     @Override

@@ -8,7 +8,6 @@
     "ContainerPlayerMixin",
     "EntityPlayerMixin",
     "GameSettingsMixin",
-    "NetHandleMixin",
     "RecipeRegistryMixin"
   ],
   "client": [
