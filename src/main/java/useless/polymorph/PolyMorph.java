@@ -28,12 +28,12 @@ public class PolyMorph implements ModInitializer, RecipeEntrypoint {
 	@Override
 	public void onRecipesReady() {
 //		Recipes for Testing
-		List<RecipeSymbol> symbols = new ArrayList<>();
-		symbols.add(new RecipeSymbol(Block.dirt.getDefaultStack()));
-		Registries.RECIPES.WORKBENCH.register("test1", new RecipeEntryCraftingShapeless(symbols, Item.diamond.getDefaultStack()));
-		Registries.RECIPES.WORKBENCH.register("test1", new RecipeEntryCraftingShapeless(symbols, Item.ingotSteel.getDefaultStack()));
-		Registries.RECIPES.WORKBENCH.register("test1", new RecipeEntryCraftingShapeless(symbols, Item.ingotIron.getDefaultStack()));
-		Registries.RECIPES.WORKBENCH.register("test1", new RecipeEntryCraftingShapeless(symbols, Item.ingotGold.getDefaultStack()));
+//		List<RecipeSymbol> symbols = new ArrayList<>();
+//		symbols.add(new RecipeSymbol(Block.dirt.getDefaultStack()));
+//		Registries.RECIPES.WORKBENCH.register("test1", new RecipeEntryCraftingShapeless(symbols, Item.diamond.getDefaultStack()));
+//		Registries.RECIPES.WORKBENCH.register("test1", new RecipeEntryCraftingShapeless(symbols, Item.ingotSteel.getDefaultStack()));
+//		Registries.RECIPES.WORKBENCH.register("test1", new RecipeEntryCraftingShapeless(symbols, Item.ingotIron.getDefaultStack()));
+//		Registries.RECIPES.WORKBENCH.register("test1", new RecipeEntryCraftingShapeless(symbols, Item.ingotGold.getDefaultStack()));
 	}
 	@Override
 	public void onInitialize() {
